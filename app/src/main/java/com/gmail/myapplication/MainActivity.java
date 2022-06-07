@@ -1,7 +1,5 @@
 package com.gmail.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,13 +11,15 @@ import android.view.KeyEvent;
 
 import android.os.Bundle;
 
+
+
 public class MainActivity extends appCompatActivity implements SensorEventListener{
 
     SonsorManager sm;
-    Sensor sensor _ accelerometer;
+    Sensor sensor = accelerometer;
 
-    int jump _ up = 0;
-    int jump _ down = 0;
+    int jump_up = 0;
+    int jump_down = 0;
 
     float x,y,z;
 
@@ -30,10 +30,15 @@ public class MainActivity extends appCompatActivity implements SensorEventListen
     JumpGame mJumpGame;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 화면을 가로로 설정하기
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.jump);
+
+        mJumpGame = findViewById(R.id.mJumpGame);
+        sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+        sensor_accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 }
