@@ -41,4 +41,13 @@ public class MainActivity extends appCompatActivity implements SensorEventListen
 
         sensor_accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            finish();
+            return false;
+        }
+        return false;
+    }
 }
