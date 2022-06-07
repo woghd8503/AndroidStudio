@@ -1,6 +1,8 @@
 package com.gmail.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -11,7 +13,7 @@ import android.view.KeyEvent;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener{
+public class MainActivity extends appCompatActivity implements SensorEventListener{
 
     SonsorManager sm;
     Sensor sensor _ accelerometer;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        // 화면을 가로로 설정하기
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.jump);
     }
 }
