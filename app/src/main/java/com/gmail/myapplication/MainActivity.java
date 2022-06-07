@@ -13,6 +13,14 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
+    SonsorManager sm;
+    Sensor sensor _ accelerometer;
+
+    int jump _ up = 0;
+    int jump _ down = 0;
+
+    float x,y,z;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
