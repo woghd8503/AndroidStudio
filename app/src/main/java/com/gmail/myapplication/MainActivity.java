@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     float x,y,z;
 
+    final int jumpThreshold = 4; // 점프 임계값
+
+    double gravity = 9.81;
+    double acceleration = 0;
+    JumpGame mJumpGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
